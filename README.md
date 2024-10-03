@@ -17,4 +17,8 @@ go build
 # Run
 ```
 ./netmore-mqtt-go-sample <customerId>
+
 ```
+# Documentation
+
+Documentation on the topic structure and formats can be found at [README.md](https://github.com/netmoregroup/netmore-mqtt-sample/blob/develop/Readme.md)

@@ -49,17 +49,17 @@ func main() {
   }
 
   opts := mqtt.NewClientOptions()
-	opts.AddBroker(url)
-	opts.SetClientID("ssl-sample").SetTLSConfig(tlsConfig)
-	opts.SetDefaultPublishHandler(messagePubHandler)
+  opts.AddBroker(url)
+  opts.SetClientID("ssl-sample").SetTLSConfig(tlsConfig)
+  opts.SetDefaultPublishHandler(messagePubHandler)
 
 	// Start the connection
-	c := mqtt.NewClient(opts)
-	if token := c.Connect(); token.Wait() && token.Error() != nil {
-		panic(token.Error())
-	}
+  c := mqtt.NewClient(opts)
+  if token := c.Connect(); token.Wait() && token.Error() != nil {
+    panic(token.Error())
+  }
   topic := fmt.Sprintf("client/%s/#", id)
-	c.Subscribe(topic, 0, func(client mqtt.Client, msg mqtt.Message) {
+  c.Subscribe(topic, 0, func(client mqtt.Client, msg mqtt.Message) {
     fmt.Printf("TOPIC: %s\n", msg.Topic())
     fmt.Printf("MSG: %s\n", msg.Payload())
   })

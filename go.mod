@@ -1,6 +1,7 @@
 module github.com/netmoregroup/netmore-mqtt-go-sample
 
-go 1.21.6
+go 1.23.0
+
 toolchain go1.23.7
 
 require github.com/eclipse/paho.mqtt.golang v1.5.0
